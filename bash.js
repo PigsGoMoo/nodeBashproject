@@ -2,6 +2,7 @@ function done(output) {
   process.stdout.write(output);
   process.stdout.write('\nprompt >');
 }
+
 module.exports = done;
 process.stdout.write('prompt >');
 process.stdin.on('data', (data) => {
@@ -26,12 +27,16 @@ process.stdin.on('data', (data) => {
     case 'curl':
       curl(arg);
       break;
+
+    case 'date':
+      time();
+      break;
     default:
-      done('This is not a valid command');
+      done(1);
   }
 });
 const pwd = require('./pwd');
 const ls = require('./ls');
 const funcCat = require('./cat');
 const curl = require('./curl');
-console.log('hi');
+const time = require('./date');
