@@ -34,3 +34,4 @@ const pwd = require('./pwd');
 const ls = require('./ls');
 const funcCat = require('./cat');
 const curl = require('./curl');
+console.log('hi');
